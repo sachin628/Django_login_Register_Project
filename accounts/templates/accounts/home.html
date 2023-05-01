@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title> Login-Register </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <style>
+    .fa {
+      padding: 5px;
+      font-size: 25px;
+      width: 50px;
+    }
+    .inputfield input{
+      margin-bottom: 10px;
+    }
+    .inputlabel label{
+      margin-bottom: 17px;
+    }
+    .wrapper{
+      text-align: center;
+      padding-top: 8em;
+      font-size: 29px;
+    }
+  </style>
+</head>
+<body>
+
+<div>
+  <nav class="navbar navbar bg-primary navbar-dark">
+    <div class="col-sm-6">
+      <a class="navbar-brand" href="/">Sachin Sharma </a>
+    </div>
+        <div class="col-sm-6" style="text-align:right;">
+          <a class="navbar-brand" href="/"> Home </a>
+          {% if user.is_authenticated %}
+            <a class="navbar-brand" href="/logout">Logout</a>
+            <a class="navbar-brand" href="/">welcome-{{user.username}}</a>
+          {% else %}
+            <a class="navbar-brand" href="/loginpage"> Login </a>
+            <a class="navbar-brand" href="/registerpage"> Register </a>
+          {% endif %}
+        </div>
+    </div>
+  </nav>
+</div>
+{% include 'accounts/message.html' %}
+  
+<div style="min-height: 90vh">
+  {% block content %}
+
+<div class="wrapper">
+  <h2>Sachin Sharma </h2>
+  <h4>Login and Register Project</h4>
+</div>
+
+  {% endblock %}
+</div>
+
+<footer
+        class="text-center text-lg-start text-white"
+        style="background-color: #1c2331"
+        >
+  <section
+           class="d-flex justify-content-between p-4"
+           style="background-color: #6351ce"
+           >
+    <div class="me-5">
+      <span>Get connected with us on social networks:</span>
+    </div>
+    <div style="padding-right:50px;">
+      
+      <a href="https://www.google.com/" class="text-white me-4" style="margin-right:8px;">
+        <i class="fab fa-google"></i>
+      </a>
+
+      <a href="https://www.linkedin.com/in/sachin-sharma-3a58b1195/" class="text-white me-4" style="margin-right:8px;">
+        <i class="fab fa-linkedin"></i>
+      </a>
+
+      <a href="https://github.com/sachin628 " class="text-white me-4" style="margin-right:8px;">
+        <i class="fab fa-github"></i>
+      </a>
+
+    </div>
+  </section>
+  <section class="">
+    <div class="container text-md-start mt-5">
+      <div class="row mt-3">
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+          <h6 class="text-uppercase fw-bold">Content</h6>
+          <hr
+              class="mb-4 mt-0 d-inline-block mx-auto"
+              style="width: 60px; background-color: #7c4dff; height: 2px"
+              />
+          <p style="text-align:left;">
+            Login and Register Project in DJango
+          </p>
+        </div>
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4 text-left">
+          <h6 class="text-uppercase fw-bold">Pages</h6>
+          <hr
+              class="mb-4 mt-0 d-inline-block mx-auto"
+              style="width: 60px; background-color: #7c4dff; height: 2px"
+              />
+              <div style="text-align:left;">
+                <a href="/" class="text-white">Home</a><br>
+              </div>
+        </div>
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4 text-left" >
+          <h6 class="text-uppercase fw-bold">Contact</h6>
+          <hr
+              class="mb-4 mt-0 d-inline-block mx-auto"
+              style="width: 60px; background-color: #7c4dff; height: 2px"
+              />
+              <div style="text-align:left;">
+                <p><i class="fas fa-home mr-3"></i> Bulandshahr, 203001, Uttar Pradesh</p>
+                <p><i class="fas fa-envelope mr-3"></i> sachinsharmagi9999@gmail.com</p>
+                <p><i class="fas fa-phone mr-3"></i> +91 7983863753</p>
+
+              </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <div
+       class="text-center p-3"
+       style="background-color: rgba(0, 0, 0, 0.2)"
+       >
+    <a class="text-white" href="/"
+       >Sachin Sharma</a>
+  </div>
+</footer>
+</div>
+</body>
+</html>
