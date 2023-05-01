@@ -33,6 +33,8 @@ def registerPage(request):
             form.save()
             messages.success(request,f'Your account has been created. You login now!')
             return redirect('accounts:home')
+        else:
+             messages.info(request, f' Please write corect credentials')
     else:
         form = CreateUserForm()
     return render(request, 'accounts/registerpage.html', {'form' : form})
